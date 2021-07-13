@@ -10,24 +10,19 @@ export class ApiService {
   private readonly urlPrefix = 'https://gnews.io';
   constructor(private http: HttpClient) { }
 
-  get(url: string) {
-    return this.http.get(this.urlPrefix + url);
+  fetch(){
+    fetch('https://gnews.io/api/v4/search?q=example&token=0752f83c9b0a2f85958c95221a548b2d')
+    .then(function (response) {
+      if(response.status !== 200){
+        return response.statusText;
+      } else {
+        return response.json();
+      }
+    })
+    .then(function (data) {
+      console.log("service api");
+      console.log(data);
+      return data;
+    });
   }
-  post(url: string, data: object) {
-    return this.http.post(this.urlPrefix + url, data, this.getRequestOptions());
-  }
-  put(url: string, data: object) {
-    return this.http.put(this.urlPrefix + url, data, this.getRequestOptions());
-  }
-  delete(url: string) {
-    return this.http.delete(`${this.urlPrefix}${url}`, this.getRequestOptions());
-  }
-
-  private getRequestOptions() {
-    const headers: {[key: string]: string} = {
-      'Content-Type': 'application/json',
-    };
-    return {
-      headers
-    };
-}}
+}
