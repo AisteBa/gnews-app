@@ -1,17 +1,16 @@
-<mat-card class="card">
-  <mat-card-header>
-    <div mat-card-avatar class="header-image"></div>
-    <mat-card-title>{{this.searchResult.articles[0].title}}</mat-card-title>
-    <mat-card-subtitle>{{this.searchResult.articles[0].publishedAt}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src={{this.searchResult.articles[0].image}} alt="#">
-  <mat-card-content>
-    <p>
-      {{this.searchResult.articles[0].description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="card-container">
+  <div class="card-row" *ngFor="let article of searchResults?.articles">
+    <mat-card class="card">
+      <mat-card-header class="card-header">
+        <mat-card-title>{{article.title}}</mat-card-title>
+        <mat-card-subtitle>{{article.publishedAt}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="card-image" mat-card-image src={{article.image}} alt="article image">
+      <mat-card-content class="card-content">
+        <p>
+          {{article.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

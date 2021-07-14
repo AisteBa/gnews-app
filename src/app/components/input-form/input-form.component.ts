@@ -12,4 +12,8 @@ export class InputFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  search(){
+    console.log("search please");
+  }
+
 }

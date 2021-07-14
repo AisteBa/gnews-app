@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from 'src/app/domain/Article';
 import { SearchResult } from 'src/app/domain/SearchResult';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -10,24 +9,23 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SearchResultComponent implements OnInit {
 
-  searchResult: any | null | SearchResult;
+  searchResults: any | null | SearchResult;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-
-    let that = this;
-
-    fetch('https://gnews.io/api/v4/search?q=example&token=0752f83c9b0a2f85958c95221a548b2d')
-      .then(function (response) {
-            return response.json();
-      })
-      .then(function (data) {
-          that.setSearchResult(new SearchResult(data.totalArticles, data.articles));
-      });
+    this.loadData(); 
   }
 
-  setSearchResult(sr: SearchResult) {
-    this.searchResult  = sr;
+  loadData(){
+    (async () => {
+      const result = await this.api.fetch('https://gnews.io/api/v4/search?q=example&token=c0346fc448aaf810908c3402c8a33caf');
+      this.setResults(result);
+    })();
   }
+
+  setResults(data: SearchResult): void {
+    this.searchResults = data;  
+  }  
+
 }

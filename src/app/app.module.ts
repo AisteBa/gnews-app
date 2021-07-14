@@ -9,8 +9,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { SearchResultComponent } from './components/search-result/search-result.component';
-import { HttpClientModule } from '@angular/common/http';
+import {SearchResultComponent} from './components/search-result/search-result.component';
+import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
