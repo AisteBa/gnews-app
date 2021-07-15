@@ -1,0 +1,58 @@
+.input-form-container {
+  width: 60%;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+
+button {
+  margin-left: 20px;
+  padding: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+p {
+  width: 100%;
+  text-align: justify;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+}
+
+.card-row {
+  width: 30%;
+}
+
+.card {
+  height: 90%;
+}
+
+.card-header {
+  height: 35%;
+}
+
+.card-image {
+  height: 40%;
+}
+
+.card-content {
+  height: 30%;
+}

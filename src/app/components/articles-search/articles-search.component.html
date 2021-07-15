@@ -1,0 +1,30 @@
+<div class="input-form-container">
+  <p>GNews is a news API to search for articles from a variety of sources, including Google News and thousands of
+    others.
+    We also provide the top news headlines, which you can filter by topic such as world, business, sports and more.
+  </p>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Search for articles...</mat-label>
+      <input matInput placeholder="Search for articles..."/>
+      <span>{{searchString}}</span>
+    </mat-form-field>
+    <button mat-rised-button (click)="onSearch()">SEARCH</button>
+  </form>
+</div>
+<div class="card-container">
+  <div class="card-row" *ngFor="let article of searchResults?.articles">
+    <mat-card class="card">
+      <mat-card-header class="card-header">
+        <mat-card-title>{{article.title}}</mat-card-title>
+        <mat-card-subtitle>{{article.publishedAt}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="card-image" mat-card-image src={{article.image}} alt="article image">
+      <mat-card-content class="card-content">
+        <p>
+          {{article.description.substring(0, 200)}}...
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

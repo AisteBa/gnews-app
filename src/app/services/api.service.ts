@@ -7,10 +7,9 @@ import { SearchResult } from 'src/app/domain/SearchResult';
 
 export class ApiService {
 
-  private readonly urlPrefix = 'https://gnews.io';
   constructor() { }
 
-  async fetch(url: string){
+  async fetch(url: string) {
 
     let searchData: any = await fetch(url)
       .then(function (response) {
