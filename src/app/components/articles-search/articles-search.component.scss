@@ -1,30 +1,30 @@
 .input-form-container {
   width: 60%;
   margin: auto;
-}
 
-form {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: auto;
-
-  .input-field {
+  .app-description {
     width: 100%;
+    text-align: justify;
   }
 
-  button {
-    width: 20%;
-    padding: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-}
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
 
-p {
-  width: 100%;
-  text-align: justify;
+    .input-field {
+      width: 100%;
+    }
+
+    button {
+      width: 20%;
+      padding: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  }
 }
 
 .card-container {
@@ -37,23 +37,25 @@ p {
   margin: auto;
 
   .card-row {
+    text-decoration: none;
     width: 30%;
-  }
 
-  .card {
-    height: 90%;
-  }
+    .card {
+      height: 90%;
+      cursor: pointer;
 
-  .card-header {
-    height: 35%;
-  }
-
-  .card-image {
-    height: 40%;
-  }
-
-  .card-content {
-    height: 30%;
+      .card-header {
+        height: 35%;
+      }
+    
+      .card-image {
+        height: 40%;
+      }
+    
+      .card-content {
+        height: 30%;
+      }
+    }
   }
 }
 

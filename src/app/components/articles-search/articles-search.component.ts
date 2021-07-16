@@ -12,8 +12,7 @@ export class ArticlesSearchComponent implements OnInit {
   searchResults: any | null | SearchResult;
   token: string = 'c0346fc448aaf810908c3402c8a33caf';
 
-  constructor(
-    private api: ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }

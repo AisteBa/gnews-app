@@ -1,5 +1,6 @@
 <div class="input-form-container">
-  <p>GNews is a news API to search for articles from a variety of sources, including Google News and thousands of
+  <p class="app-description">GNews is a news API to search for articles from a variety of sources, including Google News
+    and thousands of
     others.
     We also provide the top news headlines, which you can filter by topic such as world, business, sports and more.
   </p>
@@ -15,7 +16,7 @@
   </form>
 </div>
 <div class="card-container">
-  <div class="card-row" *ngFor="let article of searchResults?.articles">
+  <a class="card-row" *ngFor="let article of searchResults?.articles" target="_blank" href={{article.url}}>
     <mat-card class="card">
       <mat-card-header class="card-header">
         <mat-card-title>{{article.title}}</mat-card-title>
@@ -28,5 +29,5 @@
         </p>
       </mat-card-content>
     </mat-card>
-  </div>
+  </a>
 </div>
