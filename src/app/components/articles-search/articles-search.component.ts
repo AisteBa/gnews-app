@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
 import { SearchResult } from 'src/app/domain/SearchResult';
 import { ApiService } from 'src/app/services/api.service';
 
