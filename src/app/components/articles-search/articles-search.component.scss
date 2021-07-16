@@ -8,20 +8,14 @@
   }
 
   form {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
     margin: auto;
 
-    .input-field {
-      width: 100%;
-    }
-
     button {
-      width: 20%;
-      padding: 20px;
+      padding: 10px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin: 0 0 20px 20px;
       border-radius: 10px;
     }
   }
@@ -46,12 +40,13 @@
 
       .card-header {
         height: 35%;
+        font-size: 16px;
       }
-    
+
       .card-image {
         height: 40%;
       }
-    
+
       .card-content {
         height: 30%;
       }
@@ -62,7 +57,11 @@
 @media only screen and (max-width: 768px) {
 
   /* For mobile phones: */
-  .card-row {
-    width: 100%;
+  .card-container {
+    width: 80%;
+
+    .card-row {
+      width: 100%;
+    }
   }
 }

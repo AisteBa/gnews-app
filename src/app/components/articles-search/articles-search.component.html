@@ -5,13 +5,11 @@
     We also provide the top news headlines, which you can filter by topic such as world, business, sports and more.
   </p>
   <form>
-    <div class="input-field">
-      <mat-form-field appearance="outline">
+      <mat-form-field class="input-field" appearance="outline">
         <mat-label>Search for articles...</mat-label>
         <input type="text" #input matInput required placeholder="Search for articles..." />
         <mat-hint align="end">Max 40 characters</mat-hint>
       </mat-form-field>
-    </div>
     <button mat-rised-button type="button" (click)="onSearch(input.value)">SEARCH</button>
   </form>
 </div>
@@ -19,7 +17,7 @@
   <a class="card-row" *ngFor="let article of searchResults?.articles" target="_blank" href={{article.url}}>
     <mat-card class="card">
       <mat-card-header class="card-header">
-        <mat-card-title>{{article.title}}</mat-card-title>
+        <mat-card-title>{{article.title.substring(0, 70)}}...</mat-card-title>
         <mat-card-subtitle>{{article.publishedAt}}</mat-card-subtitle>
       </mat-card-header>
       <img class="card-image" mat-card-image src={{article.image}} alt="article image">
