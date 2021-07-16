@@ -4,12 +4,13 @@
     We also provide the top news headlines, which you can filter by topic such as world, business, sports and more.
   </p>
   <form>
-    <mat-form-field appearance="outline">
-      <mat-label>Search for articles...</mat-label>
-      <input matInput placeholder="Search for articles..."/>
-      <span>{{searchString}}</span>
-    </mat-form-field>
-    <button mat-rised-button (click)="onSearch()">SEARCH</button>
+    <div class="input-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Search for articles...</mat-label>
+        <input type="text" #input matInput placeholder="Search for articles..." />
+      </mat-form-field>
+    </div>
+    <button mat-rised-button type="button" (click)="onSearch(input.value)">SEARCH</button>
   </form>
 </div>
 <div class="card-container">
@@ -22,7 +23,7 @@
       <img class="card-image" mat-card-image src={{article.image}} alt="article image">
       <mat-card-content class="card-content">
         <p>
-          {{article.description.substring(0, 200)}}...
+          {{article.description.substring(0, 100)}}...
         </p>
       </mat-card-content>
     </mat-card>

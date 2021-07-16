@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
 import { SearchResult } from 'src/app/domain/SearchResult';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -9,20 +10,17 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ArticlesSearchComponent implements OnInit {
 
-  @Input() searchString: string = '';
-
   searchResults: any | null | SearchResult;
-  token: string = '0752f83c9b0a2f85958c95221a548b2d';
+  token: string = 'c0346fc448aaf810908c3402c8a33caf';
 
   constructor(
     private api: ApiService) { }
 
   ngOnInit(): void {
-    this.onSearch();
   }
 
-  onSearch () {
-    let url: string = this.makeUrl();
+  onSearch (searchString: string) {
+    let url: string = this.makeUrl(searchString);
 
     (async () => {
       const result = await this.api.fetch(url);
@@ -34,7 +32,7 @@ export class ArticlesSearchComponent implements OnInit {
     this.searchResults = data;  
   }  
 
-  makeUrl() {
-     return `https://gnews.io/api/v4/search?q=example&token=${this.token}`;
-  }  
+  makeUrl(searchString: string) {
+     return `https://gnews.io/api/v4/search?q=${searchString}&token=${this.token}`;
+  }
 }
